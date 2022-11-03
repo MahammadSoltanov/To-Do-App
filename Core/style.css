@@ -4,6 +4,7 @@ body
 {
     display: flex;
     flex-direction: column;
+    font-family: 'Roboto';
 }
 
 .main-container
@@ -17,6 +18,7 @@ body
     box-sizing: border-box;
     border: 1px solid #C4C4C4;
     border-radius: 10px;    
+    padding-bottom: 19px;
 }
 
 .top-rectangle
@@ -67,8 +69,17 @@ body
     padding: 10px;
     padding-right: 30px;
     padding-left: 27px;    
-    width: 286px;
+    width: 286px;    
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    overflow: auto;    
+}
+
+.tasks-container::-webkit-scrollbar
+{
+    display: none;
 }
 
 .task-text
@@ -77,7 +88,8 @@ body
     padding: 0px;
     font-size: 14px;
     line-height: 16px;
-    max-width: 220px;
+    max-width: 240px;
+    font-family: 'Roboto';  
     vertical-align: middle;
 }
 
@@ -90,4 +102,53 @@ body
 {
     vertical-align: middle;
     float: right;
+    content: url('/Images/xButtonGray.svg');
+}
+
+.x-button:hover
+{
+    content: url('/Images/xButtonBlack.svg');
+}
+
+.add-button-container
+{
+    margin: auto;
+    background: #833AE0;
+    display: flex;
+    border-radius: 100px;
+    width: 150px;
+    height: 42px;
+    margin-top: 18px;
+}
+
+.add-button-container p
+{
+    margin: auto;
+    text-align: center;    
+    color: white;
+}
+
+.add-round
+{
+    background: #9953F1;        
+    border-radius: 100px;
+    float: left;
+    display: flex;
+    height: 42px;
+    width: 42px;
+}
+
+.add-round p
+{    
+    color: white;
+    margin: auto;
+    
+    text-align: center;  
+}
+
+.add-button-container:hover
+{
+    width: 151px;
+    height: 43px;
+    
 }
