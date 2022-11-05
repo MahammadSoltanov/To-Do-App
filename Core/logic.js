@@ -83,13 +83,13 @@ function createNewTask()
     const taskText = document.createElement('input');
     taskText.type = 'text';
     const xButton = document.createElement('img');
+    xButton.addEventListener('click', deleteTask);
+    taskText.addEventListener('keyup', confirmTask);
 
     task.className = 'task';
     taskText.className = 'task-text';
     xButton.className = 'x-button';
 
-    xButton.addEventListener('click', deleteTask);
-    taskText.addEventListener('keyup', confirmTask);
     
     task.appendChild(taskText);
     task.appendChild(xButton);
@@ -100,13 +100,22 @@ function confirmTask(event)
 {    
     if(event.keyCode == 13)
         event.target.readOnly = true;
+    
 }
 
-// function deleteTask(event)
-// {
-//     if(event.target.readOnly == true)
+function deleteTask(event)
+{    
+    console.log(event.target.parentElement.firstChild);    
+    console.log(event.target.parentElement.firstChild.readOnly);    
+    if(event.target.parentElement.firstChild.readOnly == true)
+        event.target.parentElement.remove();
         
-// }
+    else if(event.target.parentElement.firstChild.readOnly == false)
+    {
+        event.target.parentElement.firstChild.value = "";
+
+    }
+}
 //#endregion
 
 
