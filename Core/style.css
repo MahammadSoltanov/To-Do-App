@@ -141,14 +141,12 @@ body
 .add-round p
 {    
     color: white;
-    margin: auto;
-    
+    margin: auto;    
     text-align: center;  
 }
 
 .add-button-container:hover
 {
     width: 151px;
-    height: 43px;
-    
+    height: 43px;    
 }

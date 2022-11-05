@@ -29,17 +29,13 @@ function sortAndChangeImage()
 {
     const tasksCollection = document.querySelectorAll('.task');
     const tasksArray = [];
-    tasksArray.push(...tasksCollection);    
-    console.log(tasksCollection);
-    console.log(tasksCollection[0].firstChild);
-    console.log(tasksCollection[1]);
-    console.log(tasksCollection[1].firstChild);
-    
+    tasksArray.push(...tasksCollection);            
+
     //Change Image
     if(sortImage.src == 'http://127.0.0.1:5500/Images/sortAscendingBlack.svg')
     {
-        sortImage.src = '/Images/sortDescendingBlack.svg';
-        
+        sortImage.src = '/Images/sortDescendingBlack.svg';                                       
+
         tasksArray.sort((a,b) =>
         {                     
             if(a.firstChild.value < b.firstChild.value)            
@@ -50,9 +46,9 @@ function sortAndChangeImage()
 
             return 0;
         });
-        
+
         taskContainer.replaceChildren(...tasksArray);
-        
+
         return 0;        
     }
 
@@ -71,8 +67,7 @@ function sortAndChangeImage()
             return 0;
         });
 
-        taskContainer.replaceChildren(...tasksArray);
-        
+        taskContainer.replaceChildren(...tasksArray);                   
         return 0;
     }  
 }
@@ -92,11 +87,26 @@ function createNewTask()
     task.className = 'task';
     taskText.className = 'task-text';
     xButton.className = 'x-button';
+
+    xButton.addEventListener('click', deleteTask);
+    taskText.addEventListener('keyup', confirmTask);
     
     task.appendChild(taskText);
     task.appendChild(xButton);
     taskContainer.appendChild(task);    
 }
+
+function confirmTask(event)
+{    
+    if(event.keyCode == 13)
+        event.target.readOnly = true;
+}
+
+// function deleteTask(event)
+// {
+//     if(event.target.readOnly == true)
+        
+// }
 //#endregion
 
 
