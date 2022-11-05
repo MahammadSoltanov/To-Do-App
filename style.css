@@ -114,6 +114,7 @@ body
 .x-button:hover
 {
     content: url('/Images/xButtonBlack.svg');
+    cursor: pointer;
 }
 
 .add-button-container

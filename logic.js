@@ -1,8 +1,7 @@
-const currentSiteUrl = document.URL;
-
-const taskContainer = document.querySelector('.tasks-container');
-new Sortable(taskContainer);
-createNewTask();
+const currentSiteUrl = document.URL; //needed for correct image source value
+const taskContainer = document.querySelector('.tasks-container'); //container of all tasks
+new Sortable(taskContainer); //allowind drag and drop
+createNewTask();//creating default task
 
 //#region SortButtonLogic
 const sortImage = document.querySelector('.sort-button');
@@ -51,7 +50,6 @@ function sortAndChangeImage()
         });
 
         taskContainer.replaceChildren(...tasksArray);
-
         return 0;        
     }
 
@@ -84,14 +82,14 @@ function createNewTask()
 {    
     const task = document.createElement('div');
     task.className = 'task';    
+
     const taskText = document.createElement('input');
     taskText.type = 'text';
-    const xButton = document.createElement('img');
-    
-    xButton.addEventListener('click', deleteTask);
     taskText.addEventListener('keyup', confirmTask);
-
     taskText.className = 'task-text';
+    
+    const xButton = document.createElement('img');
+    xButton.addEventListener('click', deleteTask);
     xButton.className = 'x-button';
     
     task.appendChild(taskText);
@@ -99,20 +97,14 @@ function createNewTask()
     taskContainer.appendChild(task);    
 }
 
-function confirmTask(event)
-{    
-    if(event.keyCode == 13)
-        event.target.readOnly = true;
-    
-}
+function confirmTask(event){if(event.keyCode == 13) event.target.readOnly = true;}
 
 function deleteTask(event)
-{        
-    if(event.target.parentElement.firstChild.readOnly == true)
+{            
+    if(event.target.parentElement.firstChild.readOnly == true && taskContainer.childElementCount > 1)    
         event.target.parentElement.remove();
-        
+
     else if(event.target.parentElement.firstChild.readOnly == false)
-        event.target.parentElement.firstChild.value = "";
-    
+        event.target.parentElement.firstChild.value = "";    
 }
 //#endregion
