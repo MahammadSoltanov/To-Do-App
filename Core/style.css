@@ -82,6 +82,12 @@ body
     display: none;
 }
 
+.task
+{
+    cursor: move;
+}
+
+
 .task-text
 {
     border: none;
