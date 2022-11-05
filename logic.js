@@ -10,19 +10,19 @@ sortImage.addEventListener('click', sortAndChangeImage);
 
 function changeToBlack()
 {
-    if(sortImage.src == 'http://127.0.0.1:5500/Images/sortAscendingGray.svg')
+    if(sortImage.src == '/Images/sortAscendingGray.svg')
     sortImage.src = '/Images/sortAscendingBlack.svg';
     
-    else if(sortImage.src == 'http://127.0.0.1:5500/Images/sortDescendingGray.svg')
+    else if(sortImage.src == '/Images/sortDescendingGray.svg')
     sortImage.src = '/Images/sortDescendingBlack.svg';
 }
 
 function changeToGray()
 {
-    if(sortImage.src == 'http://127.0.0.1:5500/Images/sortAscendingBlack.svg')
+    if(sortImage.src == '/Images/sortAscendingBlack.svg')
     sortImage.src = '/Images/sortAscendingGray.svg';
     
-    else if(sortImage.src == 'http://127.0.0.1:5500/Images/sortDescendingBlack.svg')
+    else if(sortImage.src == '/Images/sortDescendingBlack.svg')
     sortImage.src = '/Images/sortDescendingGray.svg';
 }
 
@@ -33,7 +33,7 @@ function sortAndChangeImage()
     tasksArray.push(...tasksCollection);            
 
     //Change Image
-    if(sortImage.src == 'http://127.0.0.1:5500/Images/sortAscendingBlack.svg')
+    if(sortImage.src == '/Images/sortAscendingBlack.svg')
     {
         sortImage.src = '/Images/sortDescendingBlack.svg';                                       
 
@@ -53,7 +53,7 @@ function sortAndChangeImage()
         return 0;        
     }
 
-    else if(sortImage.src == 'http://127.0.0.1:5500/Images/sortDescendingBlack.svg')
+    else if(sortImage.src == '/Images/sortDescendingBlack.svg')
     {        
         sortImage.src = '/Images/sortAscendingBlack.svg';
 
