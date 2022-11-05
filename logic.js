@@ -1,3 +1,5 @@
+const currentSiteUrl = document.URL;
+
 const taskContainer = document.querySelector('.tasks-container');
 new Sortable(taskContainer);
 createNewTask();
@@ -10,19 +12,19 @@ sortImage.addEventListener('click', sortAndChangeImage);
 
 function changeToBlack()
 {
-    if(sortImage.src == '/Images/sortAscendingGray.svg')
+    if(sortImage.src == currentSiteUrl + 'Images/sortAscendingGray.svg')
     sortImage.src = '/Images/sortAscendingBlack.svg';
     
-    else if(sortImage.src == '/Images/sortDescendingGray.svg')
+    else if(sortImage.src == currentSiteUrl + 'Images/sortDescendingGray.svg')
     sortImage.src = '/Images/sortDescendingBlack.svg';
 }
 
 function changeToGray()
 {
-    if(sortImage.src == '/Images/sortAscendingBlack.svg')
+    if(sortImage.src == currentSiteUrl + 'Images/sortAscendingBlack.svg')
     sortImage.src = '/Images/sortAscendingGray.svg';
     
-    else if(sortImage.src == '/Images/sortDescendingBlack.svg')
+    else if(sortImage.src == currentSiteUrl + 'Images/sortDescendingBlack.svg')
     sortImage.src = '/Images/sortDescendingGray.svg';
 }
 
@@ -33,7 +35,7 @@ function sortAndChangeImage()
     tasksArray.push(...tasksCollection);            
 
     //Change Image
-    if(sortImage.src == '/Images/sortAscendingBlack.svg')
+    if(sortImage.src == currentSiteUrl + 'Images/sortAscendingBlack.svg')
     {
         sortImage.src = '/Images/sortDescendingBlack.svg';                                       
 
@@ -53,7 +55,7 @@ function sortAndChangeImage()
         return 0;        
     }
 
-    else if(sortImage.src == '/Images/sortDescendingBlack.svg')
+    else if(sortImage.src == currentSiteUrl + 'Images/sortDescendingBlack.svg')
     {        
         sortImage.src = '/Images/sortAscendingBlack.svg';
 
