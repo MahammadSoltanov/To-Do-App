@@ -78,11 +78,12 @@ function sortAndChangeImage()
 const addButton = document.querySelector('.add-button-container');
 addButton.addEventListener('click', createNewTask);
 
+
 function createNewTask()
 {    
     const task = document.createElement('div');
     task.className = 'task';    
-
+    
     const taskText = document.createElement('input');
     taskText.type = 'text';
     taskText.addEventListener('keyup', confirmTask);
@@ -94,7 +95,10 @@ function createNewTask()
     
     task.appendChild(taskText);
     task.appendChild(xButton);
-    taskContainer.appendChild(task);    
+    taskContainer.appendChild(task);  
+    taskContainer.scrollTop = taskContainer.scrollHeight;
+    
+    
 }
 
 function confirmTask(event)
