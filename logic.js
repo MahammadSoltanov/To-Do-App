@@ -97,7 +97,14 @@ function createNewTask()
     taskContainer.appendChild(task);    
 }
 
-function confirmTask(event){if(event.keyCode == 13) event.target.readOnly = true;}
+function confirmTask(event)
+{
+    if(event.keyCode == 13) 
+    {
+        event.target.readOnly = true;
+        createNewTask();
+    }
+}
 
 function deleteTask(event)
 {            
