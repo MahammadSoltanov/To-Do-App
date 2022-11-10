@@ -59,6 +59,11 @@ body
     float: right;  
 }
 
+.sort-button:hover
+{
+    cursor: pointer;
+}
+
 .tasks-container
 {
     row-gap: 20px;
@@ -155,5 +160,6 @@ body
 .add-button-container:hover
 {
     width: 151px;
-    height: 43px;    
+    height: 43px;
+    cursor: pointer;    
 }

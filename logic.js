@@ -97,25 +97,30 @@ function createNewTask()
     task.appendChild(xButton);
     taskContainer.appendChild(task);  
     taskContainer.scrollTop = taskContainer.scrollHeight;
-    
-    
 }
 
 function confirmTask(event)
 {
-    if(event.keyCode == 13) 
+    if(event.keyCode == 13 && event.target.value != "") 
     {
-        event.target.readOnly = true;
-        createNewTask();
+        event.target.readOnly = true;        
     }
 }
 
 function deleteTask(event)
 {            
-    if(event.target.parentElement.firstChild.readOnly == true && taskContainer.childElementCount > 1)    
-        event.target.parentElement.remove();
-
-    else if(event.target.parentElement.firstChild.readOnly == false)
+    if(taskContainer.childElementCount == 1)    
+    {
         event.target.parentElement.firstChild.value = "";    
+        event.target.parentElement.firstChild.readOnly = false; 
+    }
+    else
+    {
+        if(event.target.parentElement.firstChild.readOnly == true)    
+            event.target.parentElement.remove();
+    
+        else
+            event.target.parentElement.firstChild.value = "";            
+    }         
 }
 //#endregion
