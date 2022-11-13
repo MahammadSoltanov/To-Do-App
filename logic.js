@@ -12,10 +12,10 @@ sortImage.addEventListener('click', sortAndChangeImage);
 function changeToBlack()
 {
     if(sortImage.src == currentSiteUrl + 'Images/sortAscendingGray.svg')
-    sortImage.src = '/Images/sortAscendingBlack.svg';
+        sortImage.src = '/Images/sortAscendingBlack.svg';
     
     else if(sortImage.src == currentSiteUrl + 'Images/sortDescendingGray.svg')
-    sortImage.src = '/Images/sortDescendingBlack.svg';
+        sortImage.src = '/Images/sortDescendingBlack.svg';
 }
 
 function changeToGray()
@@ -39,12 +39,10 @@ function sortAndChangeImage()
         sortImage.src = '/Images/sortDescendingBlack.svg';                                       
 
         tasksArray.sort((a,b) =>
-        {                     
-            if(a.firstChild.value < b.firstChild.value)            
-                return -1;
+        {                                 
+            if(a.firstChild.value < b.firstChild.value) return -1;
                         
-            else if(a.firstChild.value > b.firstChild.value)
-                return 1;
+            else if(a.firstChild.value > b.firstChild.value) return 1;
 
             return 0;
         });
@@ -103,6 +101,7 @@ function confirmTask(event)
 {
     if(event.keyCode == 13 && event.target.value != "") 
     {
+        event.target.scrollIntoView();
         event.target.readOnly = true;        
     }
 }
